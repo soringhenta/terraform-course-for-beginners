@@ -10,18 +10,6 @@ variable "vpc-cidr-block" {
     type = string
 }
 
-variable "list_example" {
-    description = "An example of a list in Terraform"
-    type = list
-    # default = ["a", "b", "c"]
-    default = ["a", "b"]
-    validation {
-      condition = length(var.list_example) > 3
-      error_message = "Too few elements"
-    }
-}
-
-
 resource "aws_vpc" "vpc" {
   cidr_block = var.vpc-cidr-block
   tags = {
@@ -29,13 +17,35 @@ resource "aws_vpc" "vpc" {
   }
 }
 
-# resource "aws_lb" "alb" {
-#   name               = "alb-high-avail"
-#   internal           = false
-#   load_balancer_type = "application"
-#   security_groups    = [aws_security_group.alb_security_group.id]
-#   subnets            = [aws_subnet.web-subnet1.id,aws_subnet.web-subnet2.id]
-# }
+resource "aws_subnet" "web-subnet1" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = var.web-subnet1-cidr
+  availability_zone       = var.az-1
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.web-subnet1-name
+  }
+}
+
+resource "aws_subnet" "web-subnet2" {
+  vpc_id                  = aws_vpc.vpc.id
+  cidr_block              = var.web-subnet2-cidr
+  availability_zone       = var.az-2
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = var.web-subnet2-name
+  }
+}
+
+resource "aws_lb" "alb" {
+  name               = "alb-high-avail"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.alb_security_group.id]
+  subnets            = [aws_subnet.web-subnet1.id,aws_subnet.web-subnet2.id]
+}
 
 resource "aws_security_group" "alb_security_group" {
   name        = "alb-sg"
