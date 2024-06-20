@@ -6,10 +6,10 @@ resource "aws_instance" "helloworld" {
   # Ubuntu ami
   # ami           = "ami-023adaba598e661ac"
   # Debian ami
-  ami           = "ami-042e6fdb154c830c5"
-  instance_type = "t2.micro"
-  vpc_security_group_ids = [aws_security_group.fw-rules.id,aws_security_group.web-rules.id]
-  key_name = aws_key_pair.helloworld-example.id
+  ami                    = "ami-042e6fdb154c830c5"
+  instance_type          = "t2.micro"
+  vpc_security_group_ids = [aws_security_group.fw-rules.id, aws_security_group.web-rules.id]
+  key_name               = aws_key_pair.helloworld-example.id
   tags = {
     Name   = "Hello World"
     Course = "TF Fundamentals"
@@ -26,23 +26,23 @@ resource "aws_key_pair" "helloworld-example" {
 }
 
 resource "aws_security_group" "fw-rules" {
-        name = "terraform-example-instance"
-        ingress {
-                from_port = 22
-                to_port = 22
-                protocol = "tcp"
-                cidr_blocks = ["0.0.0.0/0"]
-                description = "SSH"
-        }
+  name = "terraform-example-instance"
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "SSH"
+  }
 }
 
 resource "aws_security_group" "web-rules" {
-        name = "terraform-example-web"
-        ingress {
-                from_port = 80
-                to_port = 80
-                protocol = "tcp"
-                cidr_blocks = ["0.0.0.0/0"]
-                description = "WEB"
-        }
+  name = "terraform-example-web"
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "WEB"
+  }
 }
