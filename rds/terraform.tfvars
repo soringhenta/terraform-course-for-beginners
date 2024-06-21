@@ -1,0 +1,11 @@
+aws_region    = "eu-central-1"
+instance_type = "t2.micro"
+ssh_key_name  = "tf_example"
+ssh_port      = 22
+mysql_port    = 3306
+# web_ports = [ 80 , 443 ]
+http_port         = 80
+https_port        = 443
+db_instance_class = "db.t3.micro"
+db_instance_name  = "tf-example"
+db_username       = "dbadmin"
