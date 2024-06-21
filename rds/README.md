@@ -7,7 +7,7 @@
    3) enable site `default-ssl.conf` (man `a2ensite`)
    4) Override the content of `/var/www/html/index.html` with the string `"My Public IP is ...."` (`curl -s ifconfig.me` returns the public IP)
    
-3) Create a RDS instance (See Resource: aws_db_instance). To stay in the free-tier, the instance type should be `db.t3.micro` and the engine `mariadb`
+3) Create a RDS instance (See Resource: `aws_db_instance`). To stay in the free-tier, the instance type should be `db.t3.micro` and the engine `mariadb`
 4) Generate a random password and use it in RDS (See `random_password` function)
 5) Generate a new ssh key pair. Save the pvt and pub keys in your local `~/.ssh` directory and upload the public in EC2. (See `tls_private_key` (Resource) and `local_sensitive_file` (Resource) or `local_file` (Resource))
 6) Create 2 Security groups:
@@ -25,8 +25,8 @@
 - Don't put everything in a single tf file!
 - As output I would see:
   - the EC2 public and private IPs
-  - the RDS instance IP (not the public)
-  - the RDS random password
+  - the RDS instance hostname (not the public)
+  - the RDS random password (sensitive)
   - the public ssh key
   - the private ssh key (sensitive)
 

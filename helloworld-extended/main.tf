@@ -4,9 +4,9 @@ provider "aws" {
 
 resource "aws_instance" "helloworld" {
   # Ubuntu ami
-  # ami           = "ami-023adaba598e661ac"
+   ami           = "ami-023adaba598e661ac"
   # Debian ami
-  ami                    = "ami-042e6fdb154c830c5"
+  #ami                    = "ami-042e6fdb154c830c5"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [aws_security_group.fw-rules.id, aws_security_group.web-rules.id]
   key_name               = aws_key_pair.helloworld-example.id
@@ -33,6 +33,12 @@ resource "aws_security_group" "fw-rules" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     description = "SSH"
+  }
+egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 
