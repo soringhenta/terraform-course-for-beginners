@@ -3,25 +3,25 @@ provider "aws" {
 }
 
 variable "vpc_name" {
-    type = string
-    default = "myvpc"
+  type    = string
+  default = "myvpc"
 }
 
 variable "vpc_cidr_block" {
-    type = string
-    default = "10.10.0.0/16"
+  type    = string
+  default = "10.10.0.0/16"
 }
 
 variable "web_subnet" {
   type = object({
     name = list(string)
-    cidr = list(string) 
+    cidr = list(string)
   })
   default = {
-    name = [ "subnet1","subnet2","subnet3" ]
-    cidr = [ ]
-    az = [ ]
-    }
+    name = ["subnet1", "subnet2", "subnet3"]
+    cidr = []
+    az   = []
+  }
 }
 
 locals {
@@ -64,24 +64,24 @@ resource "aws_route_table" "public" {
   }
 }
 
-resource "aws_route_table_association" "subnet_association" {
-  for_each = aws_subnet.web
-
-  subnet_id      = each.value.id
-  route_table_id = aws_route_table.public.id
-}
-
 resource "aws_subnet" "web" {
   for_each = { for i, name in var.web_subnet.name : name => {
     cidr = local.generated_cidr[i]
-    az   = local.az[i]}
+    az   = local.az[i]
+    }
   }
-  vpc_id                  = aws_vpc.vpc.id
+  vpc_id            = aws_vpc.vpc.id
   availability_zone = each.value.az
-  cidr_block = each.value.cidr
+  cidr_block        = each.value.cidr
   tags = {
     Name = each.key
   }
+}
+
+resource "aws_route_table_association" "subnet_association" {
+  for_each       = aws_subnet.web
+  subnet_id      = each.value.id
+  route_table_id = aws_route_table.public.id
 }
 
 resource "aws_lb" "alb" {
@@ -129,12 +129,12 @@ data "aws_ami" "ubuntu_lts" {
 }
 
 resource "aws_instance" "lb_instance" {
-  ami                         = data.aws_ami.ubuntu_lts.id
-  for_each = aws_subnet.web
-  subnet_id      = each.value.id
+  ami       = data.aws_ami.ubuntu_lts.id
+  for_each  = aws_subnet.web
+  subnet_id = each.value.id
   # count = 3
-  instance_type               = "t3.micro"
-  vpc_security_group_ids      = [aws_security_group.internal.id,aws_security_group.ssh.id]
+  instance_type          = "t3.micro"
+  vpc_security_group_ids = [aws_security_group.internal.id, aws_security_group.ssh.id]
   # key_name                    = aws_key_pair.tf_keypair.id
   associate_public_ip_address = true
   user_data_replace_on_change = true
@@ -180,8 +180,8 @@ resource "aws_security_group" "alb_security_group" {
 }
 
 resource "aws_security_group" "ssh" {
-  name = "ssh"
-  vpc_id      = aws_vpc.vpc.id
+  name   = "ssh"
+  vpc_id = aws_vpc.vpc.id
   ingress {
     from_port   = 22
     to_port     = 22
@@ -191,19 +191,19 @@ resource "aws_security_group" "ssh" {
 }
 
 resource "aws_security_group" "internal" {
-  name = "internal_web"
-  vpc_id      = aws_vpc.vpc.id
+  name   = "internal_web"
+  vpc_id = aws_vpc.vpc.id
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [aws_security_group.alb_security_group.id]
     # cidr_blocks = [aws_lb.alb.]
   }
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = -1
+    from_port       = 0
+    to_port         = 0
+    protocol        = -1
     security_groups = [aws_security_group.alb_security_group.id]
   }
 }
@@ -213,5 +213,5 @@ output "az" {
 }
 
 output "dns" {
- value = aws_lb.alb.dns_name 
+  value = aws_lb.alb.dns_name
 }
