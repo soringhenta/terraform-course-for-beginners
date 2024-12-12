@@ -1,0 +1,1325 @@
+{
+	"schema": "https://gitlab.com/gitlab-org/security-products/security-report-schemas/-/raw/v15.0.6/dist/sast-report-format.json",
+	"version": "15.0.6",
+	"scan": {
+		"analyzer": {
+			"id": "keeping-infrastructure-as-code-secure",
+			"name": "Keeping Infrastructure as Code Secure",
+			"version": "v2.1.3",
+			"vendor": {
+				"name": "Checkmarx"
+			}
+		},
+		"start_time": "2024-12-12T13:48:20",
+		"end_time": "2024-12-12T13:48:34",
+		"status": "success",
+		"type": "sast",
+		"scanner": {
+			"id": "keeping-infrastructure-as-code-secure",
+			"name": "Keeping Infrastructure as Code Secure",
+			"url": "https://www.kics.io/",
+			"version": "v2.1.3",
+			"vendor": {
+				"name": "Checkmarx"
+			}
+		}
+	},
+	"vulnerabilities": [
+		{
+			"id": "2d038019e63a012e2f5227f64e352c9ea025455af79f217fb68015328f447cd6",
+			"severity": "High",
+			"name": "DynamoDB Table Not Encrypted",
+			"cwe": "311",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table#server_side_encryption"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "ce089fd4-1406-47bd-8aad-c259772bb294"
+				}
+			]
+		},
+		{
+			"id": "afe07af0259fc146e607ad63ac93533da12bb1bb364a3d88805a66936c9a5e32",
+			"severity": "High",
+			"name": "S3 Bucket Allows Public Policy",
+			"cwe": "284",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1a4bc881-9f69-4d44-8c9a-d37d08f54c50"
+				}
+			]
+		},
+		{
+			"id": "1557e3813e56b94059e402dc24e8f059eb2a9714c32ea984576a4b598903571d",
+			"severity": "High",
+			"name": "Sensitive Port Is Exposed To Entire Network",
+			"cwe": "200",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 3,
+				"end_line": 3
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "381c3f2a-ef6f-4eff-99f7-b169cda3422c"
+				}
+			]
+		},
+		{
+			"id": "52269621f696d336ea8c5c0142f335d1e6c69b5246e7921d49156e76fc36581d",
+			"severity": "High",
+			"name": "Sensitive Port Is Exposed To Entire Network",
+			"cwe": "200",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 3,
+				"end_line": 3
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "381c3f2a-ef6f-4eff-99f7-b169cda3422c"
+				}
+			]
+		},
+		{
+			"id": "6df9d9b1544ab406ac3e1c48b67bb6233237ed4ec5024454145bbd476f192a72",
+			"severity": "High",
+			"name": "Unrestricted Security Group Ingress",
+			"cwe": "668",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/providers/aws/r/security_group.html"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 7,
+				"end_line": 7
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "4728cd65-a20c-49da-8b31-9c08b423e4db"
+				}
+			]
+		},
+		{
+			"id": "b59852880462d9eb2bf36f9f306fb8a692434405ed7aada86e11de114fa4622f",
+			"severity": "High",
+			"name": "Unrestricted Security Group Ingress",
+			"cwe": "668",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/providers/aws/r/security_group.html"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 13,
+				"end_line": 13
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "4728cd65-a20c-49da-8b31-9c08b423e4db"
+				}
+			]
+		},
+		{
+			"id": "315ed75dea6860a176afb1bf31c9b8aafcb103478e1a88c347228df631bab24a",
+			"severity": "Medium",
+			"name": "EC2 Instance Has Public IP",
+			"cwe": "200",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#associate_public_ip_address"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "5a2486aa-facf-477d-a5c1-b010789459ce"
+				}
+			]
+		},
+		{
+			"id": "e68ca597214dce8c3f5983e76fca821d73bdd6f018d037c80da84837c50278b2",
+			"severity": "Medium",
+			"name": "EC2 Instance Monitoring Disabled",
+			"cwe": "778",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#monitoring"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "23b70e32-032e-4fa6-ba5c-82f56b9980e6"
+				}
+			]
+		},
+		{
+			"id": "b46c39d6038f9659459059d0569cc7eb25af7c2f14401874db5ec5c5cf419732",
+			"severity": "Medium",
+			"name": "S3 Bucket Allows Public ACL",
+			"cwe": "284",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "d0cc8694-fcad-43ff-ac86-32331d7e867f"
+				}
+			]
+		},
+		{
+			"id": "6d81632e4f15e55adcba3ce745c2ded90eaf28dbe238736503138ead4af8f79b",
+			"severity": "Medium",
+			"name": "S3 Bucket Logging Disabled",
+			"cwe": "778",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "f861041c-8c9f-4156-acfc-5e6e524f5884"
+				}
+			]
+		},
+		{
+			"id": "ba49091cd8758b728c7247ac9a186262139de77fbdfc2a914edbd019be663c6f",
+			"severity": "Medium",
+			"name": "S3 Bucket Logging Disabled",
+			"cwe": "778",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "f861041c-8c9f-4156-acfc-5e6e524f5884"
+				}
+			]
+		},
+		{
+			"id": "e43c7b543b3777b53d3cd8540fa97a0fabdc832dc30e3f674b0d35ba8fb54fcf",
+			"severity": "Medium",
+			"name": "S3 Bucket Without Ignore Public ACL",
+			"cwe": "284",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "4fa66806-0dd9-4f8d-9480-3174d39c7c91"
+				}
+			]
+		},
+		{
+			"id": "04f68282c3002a866f55beb43b1cab7caf8128f75962917d37c3fd2db1a85d9a",
+			"severity": "Medium",
+			"name": "S3 Bucket Without Restriction Of Public Bucket",
+			"cwe": "284",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1ec253ab-c220-4d63-b2de-5b40e0af9293"
+				}
+			]
+		},
+		{
+			"id": "6591a1c9bd7bed8d3607fbd39fa077a5dec9c3d721554050a16b620163fe8068",
+			"severity": "Medium",
+			"name": "S3 Bucket Without Versioning",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#versioning"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "568a4d22-3517-44a6-a7ad-6a7eed88722c"
+				}
+			]
+		},
+		{
+			"id": "d8ad56f250163964ef4354989edbae12f3a7a1a08285f3d8d2ec53594bbdb161",
+			"severity": "Medium",
+			"name": "Security Group With Unrestricted Access To SSH",
+			"cwe": "732",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 7,
+				"end_line": 7
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "65905cec-d691-4320-b320-2000436cb696"
+				}
+			]
+		},
+		{
+			"id": "ce7cfb1c0bd25f5cf9072d4aa0c0f2702f45bcea03c42e3dde8a38f293660260",
+			"severity": "Low",
+			"name": "IAM Access Analyzer Not Enabled",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/accessanalyzer_analyzer"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e592a0c5-5bdb-414c-9066-5dba7cdea370"
+				}
+			]
+		},
+		{
+			"id": "ffc69b5290ae32ef22e24c2081c15a5157b70be9ab73bbb64682e7f0a230fcf2",
+			"severity": "Low",
+			"name": "IAM Access Analyzer Not Enabled",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/accessanalyzer_analyzer"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e592a0c5-5bdb-414c-9066-5dba7cdea370"
+				}
+			]
+		},
+		{
+			"id": "7137759ce5d3594f9cfb0a613d36b4b663b064f211ed76f1e314068452541f7f",
+			"severity": "Low",
+			"name": "IAM Access Analyzer Not Enabled",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/accessanalyzer_analyzer"
+				}
+			],
+			"location": {
+				"file": "../../path/ssh-key/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e592a0c5-5bdb-414c-9066-5dba7cdea370"
+				}
+			]
+		},
+		{
+			"id": "22074fc0f2c411f4597b53dab1d97df4b88a35995e9aafe77cd4720f2a10db81",
+			"severity": "Low",
+			"name": "IAM Access Analyzer Not Enabled",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/accessanalyzer_analyzer"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e592a0c5-5bdb-414c-9066-5dba7cdea370"
+				}
+			]
+		},
+		{
+			"id": "3c765ec00591577fefbde71d6c2007709da7ec20d4ab672fa5d2b2041d595d9e",
+			"severity": "Low",
+			"name": "IAM Access Analyzer Not Enabled",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/accessanalyzer_analyzer"
+				}
+			],
+			"location": {
+				"file": "../../path/partial-config/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e592a0c5-5bdb-414c-9066-5dba7cdea370"
+				}
+			]
+		},
+		{
+			"id": "87390eb3bdcf764023298e939f926d399bd48e5baf6af7f6ec7038dd50d3776a",
+			"severity": "Low",
+			"name": "S3 Bucket Without Enabled MFA Delete",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket#mfa_delete"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 24,
+				"end_line": 24
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "c5b31ab9-0f26-4a49-b8aa-4cc064392f4d"
+				}
+			]
+		},
+		{
+			"id": "91be8a7dc3d034f99a1ef761e092d078f244f7b8d1c421c6fd6da2fa673e707f",
+			"severity": "Info",
+			"name": "DynamoDB Table Point In Time Recovery Disabled",
+			"cwe": "754",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table#point_in_time_recovery"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "741f1291-47ac-4a85-a07b-3d32a9d6bd3e"
+				}
+			]
+		},
+		{
+			"id": "62b494830240b3888bb5324a52a4c330ab18b745594c3afdd669d34bf0666b94",
+			"severity": "Info",
+			"name": "Name Is Not Snake Case",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/extend/best-practices/naming.html#naming"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 21,
+				"end_line": 21
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1e434b25-8763-4b00-a5ca-ca03b7abbb66"
+				}
+			]
+		},
+		{
+			"id": "3ff9b1a21a07dbcccc0602dc305ce7ec7c5159a3e7891a80497c885b50bb6bee",
+			"severity": "Info",
+			"name": "Name Is Not Snake Case",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/extend/best-practices/naming.html#naming"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1e434b25-8763-4b00-a5ca-ca03b7abbb66"
+				}
+			]
+		},
+		{
+			"id": "0d760e720f81e467a8225870086b257ab53c5fa4e9b02753060ee9b1bdcf97be",
+			"severity": "Info",
+			"name": "Name Is Not Snake Case",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/extend/best-practices/naming.html#naming"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 28,
+				"end_line": 28
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1e434b25-8763-4b00-a5ca-ca03b7abbb66"
+				}
+			]
+		},
+		{
+			"id": "926b9b0a0bb796b450e808f16f3a37a24b5675d8b4b7350cc81b163530b1d19c",
+			"severity": "Info",
+			"name": "Name Is Not Snake Case",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/extend/best-practices/naming.html#naming"
+				}
+			],
+			"location": {
+				"file": "../../path/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "1e434b25-8763-4b00-a5ca-ca03b7abbb66"
+				}
+			]
+		},
+		{
+			"id": "6bf3ad0572b1ff7fbe38e534830e4514945dacb5df5728805a87ae51253bd190",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/output.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "72e86f1c255ce4e9950ec8e72ae3cf67312899e2cdbadccf09ec587c0f52173d",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/output.tf",
+				"start_line": 6,
+				"end_line": 6
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "3e91fceb3427b8f77f96431d2c4b91dc9adceafa4a3ee87da0bfa1d4ad94b92c",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/ssh-key/output.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "a9360255ad442729f799ba33fb97a797c834575bc05732979847bf7ca69581e3",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/output.tf",
+				"start_line": 10,
+				"end_line": 10
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "798e47e72510a7f19353c385fb3599e193fc346a3f1bebe250f386bbff35553d",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/output.tf",
+				"start_line": 5,
+				"end_line": 5
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "48affe3efa3e0bb80486bd60c4d2aa2992a700e737d5e764c9b577c9c117ccc8",
+			"severity": "Info",
+			"name": "Output Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/outputs.html#description-output-value-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/output.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "59312e8a-a64e-41e7-a252-618533dd1ea8"
+				}
+			]
+		},
+		{
+			"id": "73030e2766bf36b627b5a08ea3bc3d2a6358c14b9a8dc40421049145d673b573",
+			"severity": "Info",
+			"name": "Resource Not Using Tags",
+			"cwe": "665",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/resource-tagging"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/main.tf",
+				"start_line": 7,
+				"end_line": 7
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e38a8e0a-b88b-4902-b3fe-b0fcb17d5c10"
+				}
+			]
+		},
+		{
+			"id": "95b0438f21833ae326f5128e09e01668bc05af9edb2ed08ce23a63be1556e70e",
+			"severity": "Info",
+			"name": "Resource Not Using Tags",
+			"cwe": "665",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/resource-tagging"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e38a8e0a-b88b-4902-b3fe-b0fcb17d5c10"
+				}
+			]
+		},
+		{
+			"id": "76c384d7d3393ccc28e4fe929d1074d3f8222cd8a91f301bb4161770a90cdb5f",
+			"severity": "Info",
+			"name": "Resource Not Using Tags",
+			"cwe": "665",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/resource-tagging"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e38a8e0a-b88b-4902-b3fe-b0fcb17d5c10"
+				}
+			]
+		},
+		{
+			"id": "bb5a0dcd1753d01ba106a970274d2f8728ad0f6c28c164762fe648d2ed11dc8b",
+			"severity": "Info",
+			"name": "Resource Not Using Tags",
+			"cwe": "665",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/resource-tagging"
+				}
+			],
+			"location": {
+				"file": "../../path/ssh-key/main.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e38a8e0a-b88b-4902-b3fe-b0fcb17d5c10"
+				}
+			]
+		},
+		{
+			"id": "9405e1f5058d3bb71512dacd0dd02c988bc4d19cc609c2ca20d3a75ce99ac97f",
+			"severity": "Info",
+			"name": "Resource Not Using Tags",
+			"cwe": "665",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/guides/resource-tagging"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/main.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "e38a8e0a-b88b-4902-b3fe-b0fcb17d5c10"
+				}
+			]
+		},
+		{
+			"id": "158133b3685f9f18bd2c4ed345ed8541b5d5ce9504aa01409768e5bc654245b6",
+			"severity": "Info",
+			"name": "Security Group Not Used",
+			"cwe": "284",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "4849211b-ac39-479e-ae78-5694d506cb24"
+				}
+			]
+		},
+		{
+			"id": "6f7c10ab72b3cd62ed6cc136d98ef3e2e48ee586fcecb91c77a9216136b745dc",
+			"severity": "Info",
+			"name": "Security Group Rule Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group#description"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "cb3f5ed6-0d18-40de-a93d-b3538db31e8c"
+				}
+			]
+		},
+		{
+			"id": "5f3563077e5aa44ff223a4d4b8eb39b9cf73b81541281001c646cc343ec7fa00",
+			"severity": "Info",
+			"name": "Security Group Rule Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group#description"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 9,
+				"end_line": 9
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "68eb4bf3-f9bf-463d-b5cf-e029bb446d2e"
+				}
+			]
+		},
+		{
+			"id": "69a3dab2e5c0426e34abeb6a7db751c5408f889b4107f6cdb49fd1186d1f62d5",
+			"severity": "Info",
+			"name": "Security Group Rule Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group#description"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 3,
+				"end_line": 3
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "68eb4bf3-f9bf-463d-b5cf-e029bb446d2e"
+				}
+			]
+		},
+		{
+			"id": "56aa20e9bf46c2cf15343ddabd8bccde52e2fdd9dde00d5d7f1eaba054898a27",
+			"severity": "Info",
+			"name": "Security Group Rule Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group#description"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/main.tf",
+				"start_line": 15,
+				"end_line": 15
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "68eb4bf3-f9bf-463d-b5cf-e029bb446d2e"
+				}
+			]
+		},
+		{
+			"id": "105c80458ff9b2d288a4213217047e8832375c467685e5a6df16f04c3c0f7af4",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/variables.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "ba2a20f73e4d977a7ee3845311c4c1b5717e53889afd0a62f2cc8510df551562",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/variables.tf",
+				"start_line": 6,
+				"end_line": 6
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "8c323dafba7a80750ef4d75b74d70bb801b252d996fc9b7443e47c9784781c9b",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/partial-config/variables.tf",
+				"start_line": 11,
+				"end_line": 11
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "32048fb6936a83e89d03774d1198875cf0e08d41bc27baccdc1c84a634a2a1a4",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/remote-backend/variables.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "190b40e955118609171328c23d30c518d78a510e237b622ee83e05b0f4995921",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/partial-config/variables.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "a6e478ac39aaad6cb9e08d22448e7720cf6bf0b5cc433344f1d49e698f8535bd",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/variables.tf",
+				"start_line": 5,
+				"end_line": 5
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "e5b56d793f5dbcc982fa2a04be4d9c34005a75a3b98769013e868acd4d6c97e6",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/variables.tf",
+				"start_line": 19,
+				"end_line": 19
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "4c0603e903b66033e9dccf0a56a36294df304a0d9ca8ce48785d8e63973e063f",
+			"severity": "Info",
+			"name": "Variable Without Description",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/partial-config/variables.tf",
+				"start_line": 6,
+				"end_line": 6
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "2a153952-2544-4687-bcc9-cc8fea814a9b"
+				}
+			]
+		},
+		{
+			"id": "efe83163bde693369325fed143c45490243b3da9367a891c471441976f737617",
+			"severity": "Info",
+			"name": "Variable Without Type",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/variables.tf",
+				"start_line": 5,
+				"end_line": 5
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "fc5109bf-01fd-49fb-8bde-4492b543c34a"
+				}
+			]
+		},
+		{
+			"id": "72612a95be8a6310689c14925a2398217394395f0493dc513cfe0b41afd00a04",
+			"severity": "Info",
+			"name": "Variable Without Type",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/ec2/variables.tf",
+				"start_line": 19,
+				"end_line": 19
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "fc5109bf-01fd-49fb-8bde-4492b543c34a"
+				}
+			]
+		},
+		{
+			"id": "af9e62cbfd2908f8c95608377087a166ef950e844523c79346240030d2e08678",
+			"severity": "Info",
+			"name": "Variable Without Type",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/variables.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "fc5109bf-01fd-49fb-8bde-4492b543c34a"
+				}
+			]
+		},
+		{
+			"id": "f8615b13b57fff2a6ea32d9d5847b72e3b557b7c79495d1195b84f756ef41958",
+			"severity": "Info",
+			"name": "Variable Without Type",
+			"cwe": "710",
+			"links": [
+				{
+					"url": "https://www.terraform.io/docs/language/values/variables.html#input-variable-documentation"
+				}
+			],
+			"location": {
+				"file": "../../path/security-groups/variables.tf",
+				"start_line": 1,
+				"end_line": 1
+			},
+			"identifiers": [
+				{
+					"type": "kics",
+					"name": "Keeping Infrastructure as Code Secure",
+					"url": "https://docs.kics.io/latest/queries/terraform-queries",
+					"value": "fc5109bf-01fd-49fb-8bde-4492b543c34a"
+				}
+			]
+		}
+	]
+}

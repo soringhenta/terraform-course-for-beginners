@@ -1,0 +1,1 @@
+awsregion = "eu-central-1"
