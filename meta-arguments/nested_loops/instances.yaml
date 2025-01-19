@@ -1,0 +1,17 @@
+instances:
+ instance1:
+   ami: ami-023adaba598e661ac
+   shape: t2-micro
+   env: dev
+ instance2:
+   ami: ami-023adaba598e661ac
+   shape: t2-micro
+   env: dev
+ instance3:
+   ami: ami-023adaba598e661ac
+   shape: t3-micro
+   env: stage
+ instance4:
+   ami: ami-023adaba598e661ac
+   shape: t3-micro
+   env: stage
