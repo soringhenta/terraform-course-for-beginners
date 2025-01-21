@@ -10,3 +10,7 @@ resource "aws_instance" "helloworld" {
     Name = "HelloWorld-${count.index}"
   }
 }
+
+output "public_ips" {
+  value = { for i in aws_instance.helloworld: i.id => "${i.public_ip}" }
+}

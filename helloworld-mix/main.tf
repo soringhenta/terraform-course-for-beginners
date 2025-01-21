@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "eu-north-1"
+  region = "eu-central-1"
 }
 
 resource "aws_instance" "helloworld" {
@@ -15,4 +15,8 @@ resource "aws_instance" "helloworld" {
   lifecycle {
     create_before_destroy = true
   }
+}
+
+output "instance_type_exists" {
+  value = length(data.aws_ec2_instance_type_offering.valid_instance_type) > 0
 }
