@@ -19,6 +19,26 @@ resource "google_compute_instance" "gcp-instance" {
   network_interface {
     network = "default"
     access_config {
+      // Ephemeral public IP
     }
+  }
+
+  metadata = {
+    name = "Gcp-instance"
+    ssh-keys = "denaropapa:${var.ssh_key} denaropapa"
+  }
+}
+
+resource "google_compute_firewall" "default" {
+  name    = "test-firewall2"
+  network = google_compute_instance.gcp-instance.network_interface[0].network
+  source_ranges = ["0.0.0.0/0"]
+
+  allow {
+    protocol = "icmp"
+  }
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "22"]
   }
 }
