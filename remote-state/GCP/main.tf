@@ -7,10 +7,10 @@
 #}
 
 provider "google" {
-  project = "tfundamental"
+  project = "vdnptest"
   region  = "europe-west3"
   zone    = "europe-west3-a"
-  credentials = "/home/nirvana/Downloads/tfundamental-ec8d739476c9.json"
+  # credentials = "/home/nirvana/Downloads/tfundamental-ec8d739476c9.json"
 }
 
 resource "google_compute_instance" "gcp-instance" {
