@@ -1,0 +1,73 @@
+{
+  "version": 4,
+  "terraform_version": "1.11.4",
+  "serial": 5,
+  "lineage": "1939f4fe-8d3f-a008-ffc4-450fb8c4f71d",
+  "outputs": {
+    "data_source_bucket_found_status": {
+      "value": true,
+      "type": "bool"
+    },
+    "final_bucket_name": {
+      "value": "my-app-bucket-41cb415509e8c0aa",
+      "type": "string"
+    },
+    "final_bucket_self_link": {
+      "value": "https://www.googleapis.com/storage/v1/b/my-app-bucket-41cb415509e8c0aa",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "google_storage_buckets",
+      "name": "all_buckets",
+      "provider": "provider[\"registry.terraform.io/hashicorp/google\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "buckets": [
+              {
+                "labels": {
+                  "goog-terraform-provisioned": "true"
+                },
+                "location": "EU",
+                "name": "my-app-bucket-41cb415509e8c0aa",
+                "self_link": "https://www.googleapis.com/storage/v1/b/my-app-bucket-41cb415509e8c0aa",
+                "storage_class": "STANDARD"
+              }
+            ],
+            "id": "vdnptest",
+            "prefix": "my-app-bucket",
+            "project": "vdnptest"
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "random_id",
+      "name": "bucket_suffix",
+      "provider": "provider[\"registry.terraform.io/hashicorp/random\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "b64_std": "QctBVQnowKo=",
+            "b64_url": "QctBVQnowKo",
+            "byte_length": 8,
+            "dec": "4740954866231853226",
+            "hex": "41cb415509e8c0aa",
+            "id": "QctBVQnowKo",
+            "keepers": null,
+            "prefix": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
